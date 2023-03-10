@@ -1,5 +1,5 @@
 import unittest
-from binary_search import binary_search as test_function
+from ..linear_search import linear_search as test_function
 
 
 class UnitTestCase(unittest.TestCase):
@@ -76,5 +76,4 @@ class UnitTestCase(unittest.TestCase):
 
 
 if __name__ == "__main__":
-    # Run the test
     unittest.main()
