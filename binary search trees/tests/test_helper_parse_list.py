@@ -3,7 +3,6 @@ from ..tree_node import TreeNode
 from ..helper import parse_list as test_function, equals
 
 
-# TODO:
 class UnitTestCase(unittest.TestCase):
 
     def test_none_equal(self):
