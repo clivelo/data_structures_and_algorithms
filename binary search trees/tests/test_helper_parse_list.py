@@ -106,6 +106,19 @@ class UnitTestCase(unittest.TestCase):
         t2.right.right = TreeNode(13)
         self.assertFalse(equals(t1, t2), "test_balanced_tree_not_equal")
 
+    def test_large_tree_equal(self):
+        t1 = test_function([2, 3, 5, 1, None, 3, 7, None, None, None, 4, 6, 8])
+        t2 = TreeNode(2)
+        t2.left = TreeNode(3)
+        t2.left.left = TreeNode(1)
+        t2.right = TreeNode(5)
+        t2.right.left = TreeNode(3)
+        t2.right.left.right = TreeNode(4)
+        t2.right.right = TreeNode(7)
+        t2.right.right.left = TreeNode(6)
+        t2.right.right.right = TreeNode(8)
+        self.assertTrue(equals(t1, t2), "test_large_tree_equal")
+
 
 if __name__ == "__main__":
     unittest.main()
