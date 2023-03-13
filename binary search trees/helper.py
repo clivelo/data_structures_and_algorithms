@@ -1,7 +1,7 @@
 from .tree_node import TreeNode
 
 
-def equals(t1, t2) -> bool:
+def equals(t1: TreeNode | None, t2: TreeNode | None) -> bool:
     if t1 is None and t2 is None:
         return True
     elif t1 is None or t2 is None:
@@ -53,3 +53,15 @@ def parse_tree(root: TreeNode | None) -> list[any]:
     return output
 
 
+def print_tree(root: TreeNode | None):
+    curr_level = [root]
+    while curr_level:
+        next_level = []
+        for node in curr_level:
+            print(node.val, end=" ")
+            if node.left:
+                next_level.append(node.left)
+            if node.right:
+                next_level.append(node.right)
+        print()
+        curr_level = next_level
