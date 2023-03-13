@@ -31,3 +31,25 @@ def parse_list(data: list[any]) -> TreeNode | None:
             queue.append(node.right)
 
     return root
+
+
+def parse_tree(root: TreeNode | None) -> list[any]:
+    if root is None: return []
+
+    queue = [root]
+    output = [root.val]
+    while queue:
+        node = queue.pop(0)
+
+        output.append(node.left.val if node.left is not None else None)
+        if node.left is not None: queue.append(node.left)
+
+        output.append(node.right.val if node.right is not None else None)
+        if node.right is not None: queue.append(node.right)
+
+    while output[-1] is None:
+        del output[-1]
+
+    return output
+
+
