@@ -65,3 +65,4 @@ def print_tree(root: TreeNode | None):
                 next_level.append(node.right)
         print()
         curr_level = next_level
+
