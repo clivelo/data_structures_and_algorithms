@@ -27,6 +27,25 @@ class UnitTestCase(unittest.TestCase):
         hash_table.insert("Patrick Levon", 495)
         self.assertEqual(hash_table.list_all(), ["Johnny Chan", "Patrick Levon"], "test_list_all")
 
+    def test_collision_values(self):
+        hash_table = HashTable()
+        hash_table.insert("listen", 99)
+        hash_table.insert("silent", 200)
+        self.assertTrue(hash_table.find("listen") == 99 and hash_table.find("silent") == 200, "test_collision_values")
+
+    def test_collision_update(self):
+        hash_table = HashTable()
+        hash_table.insert("listen", 99)
+        hash_table.insert("silent", 200)
+        hash_table.insert("listen", 101)
+        self.assertTrue(hash_table.find("listen") == 101 and hash_table.find("silent") == 200, "test_collision_update")
+
+    def test_collision_list_all(self):
+        hash_table = HashTable()
+        hash_table.insert("listen", 99)
+        hash_table.insert("silent", 200)
+        self.assertEqual(hash_table.list_all(), ["listen", "silent"], "test_collision_list_all")
+
 
 if __name__ == "__main__":
     unittest.main()
