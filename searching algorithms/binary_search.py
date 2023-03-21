@@ -1,5 +1,6 @@
 # Time complexity: O(log₂ n)
 # Space complexity: O(1)
+
 def binary_search(cards: list[int], query: int) -> int:
     low, high = 0, len(cards) - 1
 
