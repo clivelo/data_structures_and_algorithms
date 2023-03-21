@@ -52,17 +52,3 @@ def parse_tree(root: TreeNode | None) -> list[any]:
 
     return output
 
-
-def print_tree(root: TreeNode | None):
-    curr_level = [root]
-    while curr_level:
-        next_level = []
-        for node in curr_level:
-            print(node.val, end=" ")
-            if node.left:
-                next_level.append(node.left)
-            if node.right:
-                next_level.append(node.right)
-        print()
-        curr_level = next_level
-
