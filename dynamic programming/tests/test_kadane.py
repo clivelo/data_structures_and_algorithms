@@ -29,6 +29,11 @@ class UnitTestCase(unittest.TestCase):
         result = -5
         self.assertEqual(test_function(nums), result, "test_one_element_negative")
 
+    def test_two_element_negative(self):
+        nums = [-5, -3]
+        result = -3
+        self.assertEqual(test_function(nums), result, "test_two_element_negative")
+
 
 if __name__ == "__main__":
     unittest.main()
